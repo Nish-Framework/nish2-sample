@@ -1,0 +1,37 @@
+# deny access to evil robots site rippers offline browsers and other nasty scum
+#RewriteBase /
+RewriteCond %{HTTP_USER_AGENT} ^Anarchie [OR]
+RewriteCond %{HTTP_USER_AGENT} ^ASPSeek [OR]
+RewriteCond %{HTTP_USER_AGENT} ^attach [OR]
+RewriteCond %{HTTP_USER_AGENT} ^autoemailspider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xenu [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus.*Webster [OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus
+RewriteRule ^.*$ http://english-61925045732.spampoison.com [R,L] # send em to a virtual blackhole of fake email addresses
+
+# disable directory browsing
+Options All -Indexes
+
+# prevent folder listing
+IndexIgnore *
+
+# prevent these file types
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|txt)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+RewriteEngine on
+
+
+# pass-through if another rewrite rule has been applied already
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^/?(.*)\.((css)|(js)|(json)|(ttf)|(woff)|(woff2)|(ico)|(jpg)|(jpeg)|(gif)|(png)|(svg)|(map)|(webmanifest))$ apps/Sample/$1.$2 [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^.*$ apps/Sample/bootstrap.php [L]

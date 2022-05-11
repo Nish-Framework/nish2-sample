@@ -1,0 +1,55 @@
+<h1><?=$this->translator->translate('Contact Form')?></h1>
+
+<form id="form_enq" method="post" enctype="application/x-www-form-urlencoded" class="classic-form">
+    <div class="row">
+        <div class="col-8">
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="name"><?=$this->translator->translate('Name')?></label>
+                        <input type="text" class="form-control" name="name" id="name">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="email"><?=$this->translator->translate('email', 'E-Mail')?></label>
+                        <input type="email" class="form-control" name="email" id="email">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="phone"><?=$this->translator->translate('Phone')?></label>
+                        <input type="text" class="form-control" name="phone" id="phone">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mb-3">
+                        <label for="subject"><?=$this->translator->translate('Subject')?></label>
+                        <input type="text" class="form-control" name="subject" id="subject">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="message"><?=$this->translator->translate('message', 'Message')?></label>
+                        <textarea name="message" id="message" cols="30" rows="6" class="form-control text-area" ></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <button class="btn btn-success" type="submit"><?=$this->translator->translate('Submit')?></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

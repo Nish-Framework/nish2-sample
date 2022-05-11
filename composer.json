@@ -1,0 +1,30 @@
+{
+    "name": "nish-framework/nish2-sample",
+    "description": "A sample project for Nish2 framework.",
+    "type": "library",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Mehmet Andiç",
+            "email": "mehmet.andic@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "php": ">=7.4.12 | >= 8.0.0",
+        "nish-framework/nish2": "^1.0@beta",
+        "doctrine/orm": "2.12.1",
+        "doctrine/annotations": "1.13.2",
+        "doctrine/dbal": "3.3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nish\\": "src/",
+            "Sample\\": "apps/Sample/",
+            "Models\\": "Models/",
+            "Exceptions\\": "Exceptions/",
+            "Configs\\": "Configs/",
+            "Utils\\": "Utils/"
+        }
+    }
+}

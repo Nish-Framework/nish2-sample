@@ -1,0 +1,18 @@
+<h1><?=$this->translator->translate('Login')?></h1>
+
+<form name="login_form" id="login_form" method="post">
+
+    <div class="form-group">
+        <label for="signin-email"><?=$this->translator->translate('E-Mail')?></label>
+        <input id="signin-email" name="email" type="email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="signin-password"><?=$this->translator->translate('Password')?></label>
+        <input id="signin-password" name="password" type="password" class="form-control">
+    </div>
+
+    <div class="form-group mb-0">
+        <input type="hidden" name="do" value="login" />
+        <button type="submit" id="btn_login_submit" class="btn btn-primary mt-3"><?=$this->translator->translate('Login')?></button>
+    </div>
+</form>
