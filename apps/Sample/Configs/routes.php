@@ -38,4 +38,6 @@ return [
     new Route('memoizeTest2', '/memoize-test-2', [MemoizeTestController::class, 'secondTestAction']),
 
     new Route('restTest', '/rest-test', [RESTTestController::class, 'testAction'], \Sample\Controllers\RESTServices\RESTModule::class),
+
+    new Route('eventTest', '/event-test', [\Sample\Controllers\Miscellaneous\EventTestController::class, 'testAction']),
 ];
