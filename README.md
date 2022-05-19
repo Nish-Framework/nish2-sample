@@ -12,3 +12,5 @@ After editing your settings via Configs/config_dev.php you may run this piece of
 ```
 php migrations/create_mysql_db.php
 ```
+
+If you create users to check login form, passwords must be MD5 hashed. Of course, you may change this behaviour editing Sample\Sessions\RequestUser::login() method.
