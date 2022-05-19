@@ -126,33 +126,4 @@ class UserService extends DefaultService
         }
     }
 
-    /**
-     * @param $username
-     * @param $password
-     * @return mixed
-     * @throws UserNotFoundException
-     * @throws \Nish\Exceptions\ContainerObjectNotFoundException
-     */
-    public function getUserEntityByUserCredentials(
-        $username,
-        $password
-    ) {
-        $conditions = [
-            't.email = :email',
-            't.password = :password'
-        ];
-        $bind = [
-            'email' => $username,
-            'password' => md5($password),
-        ];
-
-        $resultSet = User::selectBy(implode(' AND ', $conditions), $bind, 't');
-
-        if (empty($resultSet)) {
-            throw new UserNotFoundException('User not found! username: '.$username);
-        }
-
-        return $resultSet[0];
-    }
-
 }
