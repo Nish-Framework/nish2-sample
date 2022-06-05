@@ -35,6 +35,13 @@ class UserControl
             $this->showWarningMessageToClient($this->translator->translate('You are already loginned!'));
             $this->routeManager->routeByName('dashboard');
         }
+
+        /** ALTERNATIVE **/
+        /*
+        if (RequestUser::isLoginned()) {
+            return false;
+        }
+        */
     }
 
     public function banIfUserIsNotLoginned()
@@ -43,6 +50,13 @@ class UserControl
             $this->showWarningMessageToClient($this->translator->translate('login_required_msg','Login required!'));
             $this->routeManager->routeByName('login');
         }
+
+        /** ALTERNATIVE **/
+        /*
+        if (!RequestUser::isLoginned()) {
+            return false;
+        }
+        */
     }
 
     public function showWarningMessageToClient($message = 'Error!')
